@@ -1,2 +1,3 @@
 # azsapsca
-rules for supportconfig analyzer for SAP on Azure
+
+Supportconfig Analysis Appliance Patterns for SAP on Azure

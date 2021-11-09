@@ -76,8 +76,8 @@ sub checkSBDConfiguration {
 			    SDP::Core::printDebug('SBD_STARTMODE should be always', "Found");
 			} 
 		}
-		SDP::Core::updateStatus(STATUS_WARNING, "SBD_PACEMAKER should be yes") if ( $SBD_PACEMAKER != "yes" );
-                SDP::Core::updateStatus(STATUS_WARNING, "SBD_STARTMODE should be always") if ( $SBD_STARTMODE != "always" );
+                SDP::Core::updateStatus(STATUS_WARNING, "SBD_PACEMAKER should be yes") if ( $SBD_PACEMAKER =~ m/yes/i );
+                SDP::Core::updateStatus(STATUS_WARNING, "SBD_STARTMODE should be always") if ( $SBD_STARTMODE =~ m/always/i );
 		SDP::Core::updateStatus(STATUS_SUCCESS, "No SBD_PACEMAKER or SBD_STARTMODE problems found") if ( $GSTATUS < STATUS_ERROR );
 	} else {
 		SDP::Core::updateStatus(STATUS_ERROR, "ERROR: checkTotemConfiguration(): Cannot find \"$SECTION\" section in $FILE_OPEN");
